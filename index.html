@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devansh Dubey</title>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    transition: 0.3s;
+}
+
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: #bedbf9;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav button {
+    background: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section {
+    padding: 100px 20px 60px;
+    max-width: 1000px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header {
+    text-align: center;
+    padding-top: 120px;
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dark-mode .card {
+    background: #1e1e1e;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dark-mode .project {
+    background: #2a2a2a;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+.social a {
+    margin: 0 10px;
+    color: #007bff;
+    font-size: 18px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<button onclick="toggleDark()">🌙</button>
+</nav>
+
+<header>
+<img src="profile.jpg" alt="Devansh">
+<h1>Devansh Dubey</h1>
+<p>BTech | Artificial Intelligence & Machine Learning Enthusiast</p>
+<a href="resume.pdf" download>
+<button>Download Resume</button>
+</a>
+
+<div class="social">
+<a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BCirY%2FT%2BST8eob7orUI5J0A%3D%3D" target="_blank">LinkedIn</a>
+<a href="https://github.com" target="_blank">GitHub</a>
+</div>
+</header>
+
+<section id="about">
+<div class="card">
+<h2>About Me</h2>
+<p>
+I am Devansh Dubey, a passionate BTech student specializing in Artificial Intelligence
+and Machine Learning. I enjoy solving real-world problems through coding and
+building intelligent systems.
+</p>
+<p>
+My interests include Machine Learning models, web development, and modern AI tools.
+I continuously work on improving my technical skills and building innovative projects.
+</p>
+</div>
+</section>
+
+<section id="education">
+<div class="card">
+<h2>Education</h2>
+<ul>
+<li>Bachelor of Technology in CSE (Artificial Intelligence & Machine Learning), Currently Pursuing</li>
+<li>Senior Secondary (Class XII) | Science (PCM)| UP Board | 2025
+</li>
+</ul>
+</div>
+</section>
+
+<section id="skills">
+<div class="card">
+<h2>Skills</h2>
+<ul>
+<li>HTML, CSS</li>
+<li>Java</li>
+<li>Machine Learning Basics</li>
+<li> Team Work </li>
+<li> Quick Learner</li>
+</ul>
+</div>
+</section>
+
+<section id="projects">
+
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio using HTML & CSS.</p>
+</div>
+</section>
+<section id="contact">
+<div class="card">
+<h2> Contact Form</h2>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfBmAxfB8YtIQpoLo-jp5XUGGULXOdApRxh-pTZN4I2rMjpHA/viewform?embedded=true" width="640" height="853" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+height="853" 
+frameborder="0" 
+marginheight="0" 
+marginwidth="0">
+Loading…
+</iframe>
+
+</div>
+</section>
+
+
+<footer>
+© 2026 Devansh Dubey | All Rights Reserved
+</footer>
+
+<script>
+function toggleDark() {
+    document.body.classList.toggle("dark-mode");
+}
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const position = sec.getBoundingClientRect().top;
+        if(position < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
